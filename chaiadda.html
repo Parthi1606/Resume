@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Adda</title>
+    <style>
+        .container {
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px double;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color:green;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+
+    <script>
+        function calculateBill() {
+
+            var milkP = 15;
+            var coffeeP = 12;
+            var teaP = 10;
+
+ 
+            var milkQ = parseInt(document.getElementById('milkQ').value)||0;
+            var coffeeQ = parseInt(document.getElementById('coffeeQ').value)||0;
+            var teaQ = parseInt(document.getElementById('teaQ').value)||0;
+
+ 
+            var studentID = document.getElementById('studentID').value.toLowerCase();
+
+
+            var total = (milkP * milkQ) + (coffeeP * coffeeQ) + (teaP * teaQ);
+
+  
+            var discount = 0;
+            if (studentID.includes('it major')) {
+                discount = 0.5 / 100;
+            } else if (studentID.includes('it minor')) {
+                discount = 0.25 / 100;
+            }
+
+
+            total = total-(total * discount);
+
+
+            document.getElementById('result').innerText = `Total Bill: Rs. ${total}`;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2><u><center>Chai Adda</center></u></h2>
+        <form id="billing">
+            <div>
+                <label for="milkQ">Milk (₹15 each):</label>
+                <input type="number" id="milkQ" name="milkQ" min="0" required>
+            </div><br>
+            <div>
+                <label for="coffeeQ">Coffee (₹12 each):</label>
+                <input type="number" id="coffeeQ" name="coffeeQ" min="0" required>
+            </div><br>
+            <div>
+                <label for="teaQ">Tea (₹10 each):</label>
+                <input type="number" id="teaQ" name="teaQ" min="0" required>
+            </div><br>
+            <div>
+                <label for="studentID">Student ID (for discounts):</label>
+                <input type="text" id="studentID" name="studentID" placeholder="Enter ID (IT Major/Minor)" required>
+            </div><br>
+            <div>
+               <label for="studentfile">Upload Student ID :</label>
+               <input type="file" id="studentfile" name="studentfile" required>
+           </div><br>
+            <button type="button" onclick="calculateBill()">Calculate Bill</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+</body>
+</html>
