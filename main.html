@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+    <!-- Navbar (included from another file) -->
+    <?php include 'menu.php'; ?>
+
+    <!-- Header Section with profile card -->
+    <section class="profile-section">
+        <div class="dark-background"></div>
+        <div class="container">
+            <div class="card profile-card mx-auto text-center p-4">
+                <img src="img.png" alt="Profile Image" class="rounded-circle profile-img mb-3">
+                <h1 class="profile-name">Parthi Gajora</h1>
+                <p class="profile-role">Programmer</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hello Section -->
+    <section class="hello-section text-center">
+        <div class="container">
+            <h1 class="hello-title">Hello</h1>
+            <p class="hello-subtitle">Here's who I am & what I do</p>
+            <div class="btn-group">
+                <a href="#resume" class="btn btn-primary">Resume</a>
+                <a href="#projects" class="btn btn-outline-dark">Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section text-center">
+        <div class="container">
+            <h2>My Resume</h2>
+
+            <!-- Education -->
+            <h3>Education</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Bachelor of Science in IT</h4>
+                        <p>XYZ University | 2020-2023</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>High School Diploma</h4>
+                        <p>ABC School | 2018-2020</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Experience -->
+            <h3>Work Experience</h3>
+            <div class="experience-section">
+                <div class="exp-item">
+                    <h4>Project Manager</h4>
+                    <p>Company XYZ | 2023-Present</p>
+                    <p>Managed a team of 15 developers, overseeing project timelines and client communications.</p>
+                </div>
+                <div class="exp-item">
+                    <h4>Intern</h4>
+                    <p>Company ABC | Summer 2022</p>
+                    <p>Assisted in various IT tasks, gaining hands-on experience in software development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="text-center">Projects</h2>
+            <div class="project-cards">
+                <div class="project-card">
+                    <img src="project1.jpg" alt="Project 1" class="project-img">
+                    <div class="project-desc">
+                        <h5>Project 1</h5>
+                        <p>A web application built using HTML, CSS, and JavaScript.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project2.jpg" alt="Project 2" class="project-img">
+                    <div class="project-desc">
+                        <h5>Project 2</h5>
+                        <p>An e-commerce platform developed using PHP and Bootstrap.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project3.jpg" alt="Project 3" class="project-img">
+                    <div class="project-desc">
+                        <h5>Project 3</h5>
+                        <p>Mobile application built with React Native.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section (Carousel) -->
+    <section id="achievements" class="achievements-section">
+        <div class="container">
+            <h2 class="text-center">Achievements</h2>
+            <div id="achievementCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-caption">
+                            <h5>Award 1</h5>
+                            <p>Best Project Award 2023</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-caption">
+                            <h5>Award 2</h5>
+                            <p>Top Performer in IT</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-caption">
+                            <h5>Award 3</h5>
+                            <p>Team Leader Excellence Award</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#achievementCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#achievementCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="text-center">Contact Me</h2>
+            <form action="contact.php" method="post" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message" class="form-control" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer (included from another file) -->
+    <?php include 'footer.php'; ?>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
